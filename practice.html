@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  	$(document).ready(function(){
+  		var flag = true;
+  		
+  		$('#click').on('click',function(){
+  			$(this).hide();
+  		})
+  	})
+
+  </script>
+  <script type="text/javascript">
+  	$(document).ready(function(){
+  		$('#lot').on('mouseenter',function(){
+  			$(this).css('background','red');
+  		})
+  	})
+  	$(document).ready(function(){
+  		$('#lot').on('mouseleave',function(){
+  			$(this).css('background','blue');
+  		})
+  	})
+  	$(document).ready(function(){
+  		$('#lot').on('dblclick',function(){
+  			$(this).alert('nothing');
+  		})
+  	})
+
+  </script>
+
+
+
+</head>
+<body>
+	<p id='click' >haha</p>
+
+	<p id='lot'>eeee</p>
+
+</body>
+</html>

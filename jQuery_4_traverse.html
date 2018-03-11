@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.ancestors * { 
+    display: block;
+    border: 2px solid grey;
+    color: grey;
+    padding: 5px;
+    margin: 15px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+/*    $("span").parent().css({"border":"2px solid blue"}).parents("ul").css({"color": "red", "border": "2px solid red"});*/
+    $("span").parent().css({"color": "red", "border": "2px solid red"}).siblings().css({"color": "red", "border": "2px solid red"});
+
+});
+</script>
+</head>
+
+<body class="ancestors">body (great-great-grandparent)
+  <div>
+    <ul>Traversing Up
+      <li>parent():returns the direct parent element of the selected element.</li>
+      <li>parents():returns all ancestor elements of the selected element, all the way up to the document's root element</li>
+      <li>parentsUntil():returns all ancestor elements between two given arguments.</li>
+    </ul>
+    <ul>Traversing Down
+      <li>children():returns all direct children of the selected element.</li>
+      <li>find():returns descendant elements of the selected element, all the way down to the last descendant.</li>
+    </ul>
+    <ul>Traversing Sideways
+      <li>siblings():returns all sibling elements of the selected element.</li>
+      <li>next():returns the next sibling element of the selected element.</li>
+      <li>nextAll():returns all next sibling elements of the selected element.</li>
+      <li>nextUntil():returns all next sibling elements between two given arguments.</li>
+      <li>prev()</li>
+      <li>prevAll()</li>
+      <li>prevUntil()</li>
+    </ul>
+    <ul>Filtering
+      <li>first():returns the first element of the specified elements.</li>
+      <li>last():returns the last element of the specified elements.</li>
+      <li>eq():returns an element with a specific index number of the selected elements.</li>
+      <li>filter():lets you specify a criteria. Elements that do not match the criteria are removed from the selection, and those that match will be returned</li>
+      <li>not():returns all elements that do not match the criteria.</li>
+    </ul>
+  </div>
+
+  <div style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)  
+      <li>li (direct parent)
+        <span>span</span>
+      </li>
+      <li></li>
+      <li></li>
+    </ul>   
+  </div>
+</body>
+
+</html>

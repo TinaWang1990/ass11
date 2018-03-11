@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assign_Algo_jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+
+			//question 1
+			var binarySearch = function(array, value) {
+				//write your code here.
+			}
+
+			$('#binary_search').click(function(){
+				var str_content = $('input[name="string"]').val().replace('[','').replace(']','').split(',');
+				var str_cursor = $('input[name="cursor"]').val();
+				var res = binarySearch(str_content, str_cursor);
+				$('#res_bin').text(res);
+			})
+
+
+			//question 2
+
+
+
+
+			//question 3
+
+
+
+
+			//question 4
+
+
+
+
+			//question 5
+
+
+
+
+			//question 6
+
+
+		});
+
+	</script>
+</head>
+<body>
+	<div>
+		<h3>1. Implement Binary Search</h3>
+		<p>type in serveral sorted numbers separated by ',', using the concept of binary search tree to find the index of the cursor. indexOf() method is prohibited.</p>
+		<p>Exp: Input: 1,2,5,23,45,56</p>
+		<p>If cursor is 5, output 2;<br>If cursor is 7, output -1;</p>
+		String: <input type="text" name="string"><br>
+		Cursor: <input type="text" name="cursor"><br>
+		<button id="binary_search">Binary Search</button>
+		<p id="res_bin"></p>
+	</div>
+
+	<br>
+	<div>
+		<h3>2. Click to show more</h3>
+		<p>At the beginnig, show p1 only, show the (n+1)th paragraph by clicking the nth paragraph</p>
+		<style type="text/css">
+			.hide{
+				display: none;
+			}
+		</style>
+		<p id="p1">Paragrapgh 1</p>
+		<p id="p2" class="hide">Paragrapgh 2</p>
+		<p id="p3" class="hide">Paragrapgh 3</p>
+		<p id="p4" class="hide">Paragrapgh 4</p>
+		<p id="p5" class="hide">Paragrapgh 5</p>
+		<p id="p6" class="hide">Paragrapgh 6</p>
+	</div>
+
+	<br>
+	<div>
+		<h3>3. Use keyboard to move the little rectangle</h3>
+		<div style="width: 400px; height: 400px; background: #eee; position: relative;">
+			<div id="box" style="width: 20px; height: 20px; background: black; margin-left: 100px; margin-top: 100px; position: absolute;"></div>
+		</div>
+	</div>
+
+	<br>
+	<div>
+		<h3>4. Implement a browser side calculation to output the sum.</h3>
+		<form>
+			<label>Product 1:<br>
+				price: 10
+				quantity:
+				<select id="q1">
+					<option value="0" selected>0</option>
+					<option value="1">1</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+				</select>
+			</label><br>
+			<label>Product 2:<br>
+				price: 20
+				quantity:
+				<input type="number" name="q2" min="0" max="10">		
+			</label><br>
+			Total:<input type="number" name="total" readonly>
+		</form>
+	</div>
+
+	<br>
+	<div id="question5_container">
+		<style type="text/css">
+			#question5 *{
+				border: solid 1px grey;
+			}
+		</style>
+		<h3>5. 当鼠标移动到某个元素上面时，该元素的直接父元素的边框变成红色。</h3>
+		<div id="question5">
+			<ul>1
+				<li>1.1</li>
+				<ul>1.2
+					<li>1.2.1</li>
+					<li>1.2.2</li>
+				</ul>
+				<li>1.3</li>
+				<li>1.4</li>
+			</ul>
+		</div>
+	</div>
+
+	<br>
+	<div>
+		<h3>6. 弹球小游戏</h3>
+		<p>假设有一个div长宽为400px，300px；内含有一个长宽为20px的正方形，小正方形从大div的左上角发射（方向随机，范围为直角坐标系的第二象限），速度随机，小正方形碰到大div边界即反弹。请用jQuery实现这个过程。（需要用到课上讲过的position()方法，css中的top属性等等）</p>
+		<p>步骤：<br>		
+			（1）用setInterval()控制小div的移动<br>
+			（2）思考横向的移动及边界控制问题<br>
+			（3）思考纵向的移动及边界控制问题
+		</p>
+		<style type="text/css">
+			#container{
+				width: 400px;
+				height: 300px;
+				border: solid 1px black;
+			}
+
+			#item{
+				width: 20px;
+				height: 20px;
+				background: red;
+				position: absolute;
+			}
+		</style>
+		<div id="container">
+			<div id="item"></div>
+		</div>
+	</div>
+
+</body>
+</html>

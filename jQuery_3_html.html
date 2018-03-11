@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        alert("Text: " + $("#test").text());
+    });
+    $("#btn2").click(function(){
+        alert("HTML: " + $("#test").html());
+    });
+    $("#btn3").click(function(){
+        alert("Value: " + $("#test_val").val());
+    });
+    $("#btn3-1").click(function(){
+        
+        $("#test_val").val("jack");
+    });
+
+    $("#btn4").click(function(){
+	    $("#test4").text("Hello world!");
+	});
+
+	$("#btn5").click(function(){
+        $("#sf").attr("href", function(ghghf, fgf){
+            return fgf + "/jquery"; 
+        });
+    });
+
+	$("#btn6").click(function(){
+	    $("#p6").append("liuxin");
+	});
+
+	$("#btn7").click(function(){
+	    $("#div7 p:nth-of-type(2)").remove();
+	});
+
+	$("#btn-8").click(function(){
+	    $("#div8").toggleClass('negative');
+	});
+
+});
+</script>
+</head>
+<body>
+
+<p id="test">This is some <b>bold</b> text in a paragraph.</p>
+
+<button id="btn1">Show Text</button>
+<button id="btn2">Show HTML</button>
+
+<p>Name: <input type="text" id="test_val" value="Mickey Mouse"></p>
+
+<button id="btn3">Show Value</button>
+<button id="btn3-1">Set Value</button>
+
+<hr><hr>
+<p id="test4"></p>
+<button id="btn4">Set text/html/value</button>
+
+
+<hr><hr>
+<p><a href="https://sunnyfuture.ca" id="sf">SunnyFuture</a></p>
+<button id="btn5">Change href Value</button>
+
+
+<hr><hr>
+<ul>
+	<li>append() - Inserts content at the end of the selected elements</li>
+	<li>prepend() - Inserts content at the beginning of the selected elements</li>
+	<li>after() - Inserts content after the selected elements</li>
+	<li>before() - Inserts content before the selected elements</li>
+</ul>
+Exercise:<br>
+<p id="p6">Here I am</p>
+<button id="btn6">test</button>
+
+
+<hr><hr>
+<ul>
+	<li>remove() - Removes the selected element (and its child elements)</li>
+	<li>empty() - Removes the child elements from the selected element</li>
+</ul>
+Exercise:<br>
+<div id="div7">
+	<p>12</p>
+	<p>34</p>
+</div>
+<button id="btn7">remove</button>
+
+<hr><hr>
+<ul>
+	<li>addClass() - Adds one or more classes to the selected elements</li>
+	<li>removeClass() - Removes one or more classes from the selected elements</li>
+	<li>toggleClass() - Toggles between adding/removing classes from the selected elements</li>
+	<li>css() - Sets or returns the style attribute</li>
+</ul>
+<style type="text/css">
+	.positive{
+		font-size: 20px;
+		color: green;
+		background: yellow;
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		padding: 60px auto;
+	}
+	.negative{
+		font-size: 10px;
+		color: grey;
+		background: black;
+		height: 50px;
+		width: 100px;
+	}
+</style>
+<div id="div8" class="positive">Emotion</div>
+<button id="btn-8">change style</button>
+
+
+<hr><hr>
+<div>
+	<div style="display: inline-block">
+		<ul>
+			<li>width()</li>
+			<li>height()</li>
+			<li>innerWidth()</li>
+			<li>innerHeight()</li>
+			<li>outerWidth()</li>
+			<li>outerHeight()</li>
+		</ul>
+	</div>
+	<div style="display: inline-block; width: 200px;margin-left: 50px;">
+		Tip:<br>.postion() get the top(.top) and left(.left) offset to the top-left point.
+	</div>
+</div>
+
+<img src="img_jquerydim.gif" /><br>
+<div id="div1" style="width:50px;height:50px;background:red;"></div>
+Gap
+<div id="div2" style="width:50px;height:50px;background:green;margin: 30px;"></div>
+Exercise: calculate the vertical difference between two divs.
+
+
+
+
+
+
+</body>
+</html>

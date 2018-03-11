@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+	var flag = true;
+    $("#start_1").click(function(){
+        //$("#demo_1").hide(4000);
+        $("#demo_1").toggle(1000);
+/*        if(flag){
+        	$("#demo_1").hide(1000);
+        }else{
+        	$("#demo_1").show(1000);
+        }
+		flag = !flag;*/
+    });
+
+	$("#start_2").click(function(){
+/*        $("#demo_2").fadeOut(1000);
+        $("#demo_2").fadeIn(1000);*/
+        $("#demo_2").fadeToggle(1000);
+        //$("#demo_2").fadeToggle(1000,0.5);
+    });
+
+	$("#start_3").click(function(){
+        $("#demo_3").slideToggle(1000);
+        //$("#demo_3").slideUp(3000);
+        /*$("#demo_3").slideDown(5000);*/
+    });
+
+	var state = true;
+	$("#start_4").click(function(){
+		if(state){
+	        $("#demo_4").animate({
+	        	height: '200px',
+	        	width: '200px',
+	        	opacity: '0.5',
+	        	backgroundColor: 'black',
+	        	fontSize: '30px',
+	        	color: 'white'
+	        },2000);			
+		}else{
+			$("#demo_4").animate({
+	        	height: '100px',
+	        	width: '100px',
+	        	opacity: '1',
+	        	backgroundColor: 'white',
+	        	fontSize: '12px',
+	        	color: 'black'
+	        },2000,function(){alert("back to origin")});
+		}
+		state = !state;
+
+    });
+
+    $("#stop").click(function(){
+    	$("#demo_4").stop();
+    });
+
+    $("#start_5").click(function(){
+    	$("#chaining").css('color','blue').slideUp(1000).slideDown(1000).css('color','red');
+    })
+});
+</script>
+</head>
+<body>
+
+
+<div>
+	<p id="demo_1">Hide</p>
+	<button id="start_1">Start hide/show</button>
+</div><br><hr>
+
+<div>
+	<p id="demo_2">Fade</p>
+	<button id="start_2">Start fadeIn/Out/Toggle</button>
+</div><br><hr>
+
+<div>
+	<p id="demo_3">Slide</p>
+	<button id="start_3">Start slideUp/Down/Toggle</button>
+</div><br><hr>
+
+<div>
+	<div id="demo_4" style="width: 100px;height: 100px;opacity: 1;background: white;font-size: 12px;">Animate</div>
+	<button id="start_4">Start animate</button>
+	<button id="stop">Stop</button>
+</div><br><hr>
+
+<div>
+	<p id="chaining">Chaining Demo</p><br>
+	<button id="start_5">Display chain effect.</button>
+</div>
+
+</body>
+</html>

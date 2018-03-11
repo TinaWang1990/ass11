@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+function f1(){
+	$("#2").show(1000,function(){
+		$("#3").show(1000,function(){
+			$("#4").show(1000,function(){
+				$("#5").show(1000);
+			});
+		});
+	});
+	//
+}
+function f2(){
+/*	$("#2").show(1000);
+	$("#3").show(2000);
+	$("#4").show(3000);
+	$("#5").show(4000);*/
+	setTimeout(function(){$("#2").show(1000)},1000);
+	setTimeout(function(){$("#3").show(1000)},2000);
+	setTimeout(function(){$("#4").show(1000)},3000);
+	setTimeout(function(){$("#5").show(1000)},4000);
+}
+$(document).ready(function(){
+    $("button#b1").click(function(){
+    	$("p").hide();
+        $("#1").toggle("2000", f1());
+    });
+
+    $("button#b2").click(function(){
+    	$("p").hide();
+        $("#1").toggle("2000", f2());
+    });
+});
+</script>
+</head>
+<body>
+
+<button id="b1">callback effect</button>&nbsp;<button id="b2">no callback effect</button>
+
+<p id="1" style="display: none;">Paragraph 1</p>
+<p id="2" style="display: none;">Paragraph 2</p>
+<p id="3" style="display: none;">Paragraph 3</p>
+<p id="4" style="display: none;">Paragraph 4</p>
+<p id="5" style="display: none;">Paragraph 5</p>
+
+</body>
+</html>
