@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Assign_Algo_jQuery</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -8,30 +9,108 @@
 		$(document).ready(function(){
 
 			//question 1
-			var binarySearch = function(array, value) {
-				//write your code here.
-			}
+			// var binarySearch = function(array, value) {
+			// 	//write your code here.
+			// 	var arr= array;
+			// 	var val =value;
+			// 	var n=arr.length-1;
+				
+			// 	if(n%2==0){
+			// 		var j=n/2;
+			// 	}else{
+			// 		var j=(n-1)/2;
+			// 	}
 
-			$('#binary_search').click(function(){
-				var str_content = $('input[name="string"]').val().replace('[','').replace(']','').split(',');
-				var str_cursor = $('input[name="cursor"]').val();
-				var res = binarySearch(str_content, str_cursor);
-				$('#res_bin').text(res);
-			})
+			// 	if(val<arr["j"]){
+			// 		for(var i=j-1; i>=0;i--){
+			// 			if(arr[i]==val){
+			// 				return i;
+			// 			}else{ return -1;}
+			// 		}
+
+			// 	}else{
+			// 		for(var i=j; i<n;i++){
+			// 			if(arr[i]==val){
+			// 				return i;
+			// 			}else{return -1;}
+			// 		}
+			// 	}
+				
+			// 	}
+
+
+			// $('#binary_search').click(function(){
+			// 	var str_content = $('input[name="string"]').val().replace('[','').replace(']','').split(',');
+			// 	var str_cursor = $('input[name="cursor"]').val();
+			// 	var res = binarySearch(str_content, str_cursor);
+			// 	$('#res_bin').text(res);
+			// })
 
 
 			//question 2
-
+		// $('#p1').on('click', function(){
+		// 	$('#p2').show();
+		// })
+		// $('#p2').on('click', function(){
+		// 	$('#p3').show();
+		// })
+		// $('#p3').on('click', function(){
+		// 	$('#p4').show();
+		// })
+		// $('#p4').on('click', function(){
+		// 	$('#p5').show();
+		// })
 
 
 
 			//question 3
+// $(document).keydown(function(event){
+// 	var box=$('#box');
+// 	var x= event.clientX;
+// 	var y= event.clientY;
+// 	var boxx1=box.offsetLeft;
+// 	var boxy1=box.offsetTop;
+// 	var boxx2=box.offsetLeft+box.offsetWidth;
+// 	var boxy2=box.offsetTop+box.offsetHeight;
+
+// 	if(x<boxx1||x>boxx2||y<boxy1||y>boxy2){
+// 		return ;
+// 	}else{
+// 				var key=event.which;
+// 				box.css({position:'relative'});
+// 			switch (key) {
+// 				case 37:box.animate({left:'-=10px'});break;
+// 				case 38:box.animate({top:'-=10px'});break;
+// 				case 39:box.animate({left:'+=10px'});break;
+// 				case 40:box.animate({top:'+=10px'});break;
+// 				default:
+// 					break;
+// 			}
+// 			}
+// 		})
+
+		// $(document).keydown(function(event){
+		// 	var key=event.which;
+		// 	box.css({position:'relative'});
+		// 	switch (key) {
+		// 		case 37:box.animate({left:'-=10px'});break;
+		// 		case 38:box.animate({top:'-=10px'});break;
+		// 		case 39:box.animate({left:'+=10px'});break;
+		// 		case 40:box.animate({top:'+=10px'});break;
+		// 		default:
+		// 			break;
+		// 	}
+		// })
 
 
 
 
 			//question 4
-
+	var first=$("#q1 option:selected").val();
+	var second=$('#q2').attr("value");
+	var total=$('total');
+	var	sum=10*"first"+20*"second";
+		return total.text(sum);
 
 
 
@@ -43,7 +122,8 @@
 			//question 6
 
 
-		});
+
+	});
 
 	</script>
 </head>
@@ -114,6 +194,8 @@
 				border: solid 1px grey;
 			}
 		</style>
+		
+
 		<h3>5. 当鼠标移动到某个元素上面时，该元素的直接父元素的边框变成红色。</h3>
 		<div id="question5">
 			<ul>1

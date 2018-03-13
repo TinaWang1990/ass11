@@ -8,7 +8,7 @@
   <script type="text/javascript">
   	$(document).ready(function(){
   		var flag = true;
-  		
+
   		$('#click').on('click',function(){
   			$(this).hide();
   		})
@@ -17,20 +17,20 @@
   </script>
   <script type="text/javascript">
   	$(document).ready(function(){
-  		$('#lot').on('mouseenter',function(){
+  		$('#lot').on({
+  			mouseenter : function(){
   			$(this).css('background','red');
-  		})
-  	})
-  	$(document).ready(function(){
-  		$('#lot').on('mouseleave',function(){
+  		},
+  		mouseleave:function(){
   			$(this).css('background','blue');
-  		})
-  	})
-  	$(document).ready(function(){
-  		$('#lot').on('dblclick',function(){
-  			$(this).alert('nothing');
-  		})
-  	})
+  		},
+  		dblclick:function(){
+  			alert('clicked twice');
+  		}
+  	});
+	});
+
+
 
   </script>
 
