@@ -106,14 +106,22 @@
 
 
 			//question 4
-	var first=$("#q1 option:selected").val();
-	var second=$('#q2').attr("value");
-	var total=$('total');
-	var	sum=10*"first"+20*"second";
-		return total.text(sum);
+	$('#button').on('click',function(){
+	var first=parseInt($("#q1 option:selected").val());
+	var second=parseInt($("input[name='q2']").val());
+	
+	var	sum=10*first+20*second;
+	
+	$("#total").val(sum);
+	});
 
 
+	
+	
 
+	
+
+	
 			//question 5
 
 
@@ -183,7 +191,8 @@
 				quantity:
 				<input type="number" name="q2" min="0" max="10">		
 			</label><br>
-			Total:<input type="number" name="total" readonly>
+			Total:<input type="number" id="total" readonly >
+			<input type="button" id="button" value="submit">
 		</form>
 	</div>
 
