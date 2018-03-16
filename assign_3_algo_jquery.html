@@ -89,19 +89,50 @@
 // 			}
 // 		})
 
-		// $(document).keydown(function(event){
-		// 	var key=event.which;
-			// var box=$('#box');
-		//box.css({position:'relative'});
-		// 	switch (key) {
-		// 		case 37:box.animate({left:'-=10px'});break;
-		// 		case 38:box.animate({top:'-=10px'});break;
-		// 		case 39:box.animate({left:'+=10px'});break;
-		// 		case 40:box.animate({top:'+=10px'});break;
-		// 		default:
-		// 			break;
-		// 	}
-		// });
+		$(document).keydown(function(event){
+			var key=event.which;
+			var box=$('#box');
+			freeze(event);
+			switch (key){
+			    case 37:    //left arrow key
+			    	if($('#box').position().left>=20){
+			    		$("#box").finish().animate({	
+				            left: "-=20"
+				        });
+			    	}	    				    		
+			        break;
+			    case 38:    //up arrow key
+			    	if($('#box').position().top>=20){
+			    		$("#box").finish().animate({
+				            top: "-=20"
+				        });
+			    	}
+			        break;
+			    case 39:    //right arrow key
+			    	if($('#box').position().left<=360){
+			    		$("#box").finish().animate({
+				            left: "+=20"
+				        });
+			    	}     
+			        break;
+			    case 40:    //bottom arrow key
+			    	if($('#box').position().top<=360){
+			    		$("#box").finish().animate({
+				            top: "+=20"
+				        });
+			    	}  
+			        break;
+			    }
+		});
+		function freeze(event){
+			if($(window).scrollTop() < $('#container_3').position().top + $('#container_3').height() || $(window).scrollTop() + $(window).height() > $('#container_3').position().top){
+				switch(event.which){
+						case 37: case 38: case 39: case 40: event.preventDefault(); break;
+						dafault: break;
+					}
+
+			}
+		}
 
 
 
@@ -147,42 +178,35 @@
 	// 	}
 	// });
 
+	// $('#question5 li').on({
+	// 	mouseenter:function(){
+	// 		$(this).parent().css({'border':'solid 2px red'});
+	// 	},
+	// 	mouseleave:function(){
+	// 		$(this).parent().css({'border':'solid 2px grey'});
+	// 	}
+	// });
+
 
 
 			//question 6
-	var item=$('#item');
-	var container=$('#container');
-	var left=item.position().left+'px';
+	// var speed_h=Math.random()*5;
+	// var speed_v=Math.random()*5;
+
 	
-	setInterval(function(){
-		var directX=1+'px';
-	    var directY=-1+'px';
+	// setInterval(function(){
+	// var item_left=$('#item').position().left;
+	// var item_top=$('#item').position().top;
 		
-		console.log(left);
-		left=left+directX;
-		console.log(left);
-
-		var top=parseInt(item.position());
-		top+=directY;
-		
-		if(left>=380){
-			left=380;
-			directX=-directX;
-		}else if(left<=0){
-			left=0;
-			directX=-directX;
-		}
-		if(top<=-380){
-			left=-380;
-			directY=-directY;
-		}else if(left>=0){
-			left=0;
-			directY=-directY;
-		}
-
-		left=left+'px';
-		top=top+'px';
-	},1000);
+	// 	if(item_top<0||item_top+20>300){
+	// 		speed_v*=-1;
+	// 	}
+	// 	if(item_left<0||item_left+20>400){
+	// 		speed_h*=-1;
+	// 	}
+	// 	$('#item').css({"top":item_top+speed_v+"px"});
+	// 	$('#item').css({"left":item_left+speed_h+"px"});
+	// },10);
 
 		
 
@@ -223,8 +247,8 @@
 	<br>
 	<div>
 		<h3>3. Use keyboard to move the little rectangle</h3>
-		<div style="width: 400px; height: 400px; background: #eee; position: relative;">
-			<div id="box" style="width: 20px; height: 20px; background: black; margin-left: 100px; margin-top: 100px; position: absolute;"></div>
+		<div id="container_3" style="width: 400px; height: 400px; background: #eee; position: relative;">
+			<div id="box" style="width: 20px; height: 20px; background: black; left: 100px; top: 100px; position: absolute;"></div>
 		</div>
 	</div>
 
